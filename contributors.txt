@@ -1,1 +1,2 @@
-Add group contributors
+Name:                           Email:
+Alvaro Avalos-Morales           avaloa5@unlv.nevada.edu
