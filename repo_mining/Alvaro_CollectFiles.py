@@ -54,7 +54,7 @@ def countfiles(dictfiles, lsttokens, repo):
                     
                     if(filename.endswith(('.java', '.kt', '.cpp'))):
                         dictfiles[filename] = dictfiles.get(filename, 0) + 1
-                        print(filename)
+                        print(filename + " touched by " + author + " on " + dateTouched)
             ipage += 1
     except:
         print("Error receiving data")
