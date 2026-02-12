@@ -104,6 +104,7 @@ Each test should include:
 # - Ensure invalid email formats raise a validation error.
 # Target Method: validate_email()
 
+
 # Student 3: Test missing required fields
 # - Ensure account initialization fails when required fields are missing.
 # Target Method: Account() initialization
@@ -144,13 +145,13 @@ def test_password_hashing():
     assert account.password_hash is not None
 
     #test if the password is hashed
-    assert account.password_hash != "password" is True
+    assert account.password_hash != "password"
 
     #test if the password verification is functioning
-    assert account.check_password("password") is True
+    assert account.check_password("password") == True
 
     #test if inputting an incorrect password functions
-    assert account.check_password("notpassword") is False
+    assert account.check_password("notpassword") == False
         
 
 # Student 9: Test account deactivation/reactivation
