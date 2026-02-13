@@ -128,6 +128,30 @@ Each test should include:
 # - Ensure passwords are properly hashed.
 # - Verify that password verification works correctly.
 # Target Methods: set_password() / check_password()
+# ===========================
+# Test: Password hashing test
+# Author: Rabin Lazarte
+# Date: 2026-02-11
+# Description: Ensure passwords are being hashed and verify that the password verificaitions functions
+# ===========================
+
+def test_password_hashing():
+    #Test assigning a password to an account
+    account = Account(name="John Doe", email="johndoe@example.com", role="user")
+    account.set_password("password")
+
+    #test if password exists
+    assert account.password_hash is not None
+
+    #test if the password is hashed
+    assert account.password_hash != "password"
+
+    #test if the password verification is functioning
+    assert account.check_password("password") is True
+
+    #test if inputting an incorrect password functions
+    assert account.check_password("notpassword") is False
+        
 
 # Student 9: Test account deactivation/reactivation
 # - Ensure accounts can be deactivated and reactivated correctly.
