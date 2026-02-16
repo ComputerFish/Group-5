@@ -29,6 +29,12 @@ class TestCounterEndpoints:
         result = client.post('/counters/foo')
         assert result.status_code == status.HTTP_201_CREATED
 
+    # Prevent duplicate counters - Tszchoi Siu
+    def test_prevent_duplicate_counters(self, client):
+        # Try to create the same counter again
+        result = client.post("/counters/foo")
+        assert result.status_code == status.HTTP_409_CONFLICT
+
     # Write Failing Test - Brian
     def test_read_counter(self, client):
         """It should read a counter"""
