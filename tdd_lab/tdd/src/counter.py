@@ -48,8 +48,9 @@ def counter_not_found(name):
 def increment_counter(name):
     """Update/Increment a counter"""
     # Check if the counter exists
-    if name not in COUNTERS:
-        return jsonify({"error": f"Counter {name} doesn't exist"}), status.HTTP_404_NOT_FOUND
+    # refactor: use existing helper function
+    if not counter_exists(name):
+        return counter_not_found(name)
     
     # Increment the counter
     COUNTERS[name] += 1
