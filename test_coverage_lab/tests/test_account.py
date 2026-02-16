@@ -109,10 +109,11 @@ def test_account_serialization():
     # Create test account
     account = Account(
         name="John Smith",
-        email="johnsmith123@gmail.com"
-        phone_number="702-877-1500"
-        balance=100.0
-        role="user"
+        email="johnsmith123@gmail.com",
+        phone_number="702-877-1500",
+        balance=100.0,
+        role="user",
+        disabled=False
         )
     
     # Serialize the test account
