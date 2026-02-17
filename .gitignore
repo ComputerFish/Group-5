@@ -1,6 +1,13 @@
-# Ignore venv virtual machine - Brian
+# Ignore venv virtual machines - Brian
 lab_2_vm/
+Phase2venv/
+Phase3Venv/
+.DS_Store
 
 # Ignore phase 2 virtual machien - Brian
 Phase2venv/
 .DS_Store
+# Excluse environment specific configs
+.pyc
+_pycache_/
+__pycache__/
